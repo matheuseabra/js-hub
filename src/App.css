@@ -1,32 +1,216 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css?family=Bungee+Shade');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,700');
+
+* {
+  outline: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+body {
+  background-color: #f7f7f7;
+  font-family: 'Montserrat', sans-serif;  
+  font-weight: 300;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header {
+  background: linear-gradient(45deg, rgb(224, 147, 4), mediumslateblue);
+  padding: 3em;
   display: flex;
-  flex-direction: column;
+  flex-direction: column wrap;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.header h3 {
+  font-family: 'Bungee Shade', cursive;
+  font-size: 2em;
+  margin: 0;
+  padding: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.nav {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  vertical-align: middle;
+  display: inline-flex;
+}
+
+.nav .nav-item {
+  margin: 0 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.productList {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-gap: 15px;
+  margin: 0;
+  list-style-type: none;
+  animation: .45s ease-in-out 0s fadeInUp; 
+}
+
+.productList li {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  background-color: #FFF;
+  padding: 1.5em 1em;
+  border-radius: 5px;
+  margin: 0;
+  border-bottom: 2px solid rgba(0,0,0,0.2);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  transform: translateY(0px);
+}
+
+.productList li:hover {
+  transform: translateY(-8px);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.productList h3 {
+  margin: 0;
+  color: orange;
+}
+
+.productList p {
+  color: #999;
+  min-width: 250px;
+}
+
+.productList a {
+  background-color: orange;
+  color: white;
+  font-weight: bold;
+  padding: 5px 25px;
+  text-decoration: none;
+  border-radius: 3px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.pagination {
+  padding: 2em;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+} 
+
+
+.btn {
+  padding: 10px 20px;
+  text-align: center;
+  margin: 0;
+  border-radius: 3px;
+  font-weight: bold;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.7;
+}
+
+.btn-primary {
+  background-color: orange;
+  color: white;
+} 
+
+/* Animations */
+
+.fade-enter {
+  opacity: 0.01;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.fade-leave {
+  opacity: 1;
+}
+
+.fade-leave.fade-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
+
+.scene_element {
+  animation-duration: 0.25s;
+  transition-timing-function: ease-in;
+  animation-fill-mode: both;
+
+}
+
+/** An element that fades in */
+.scene_element--fadein {
+  animation-name: fadeIn;
+}
+
+/** An element that fades in and slides up */
+.scene_element--fadeinup {
+  animation-name: fadeInUp;
+}
+
+/** An element that fades in and slides from the right */
+.scene_element--fadeinright {
+  animation-name: fadeInRight;
+}
+
+/* Keyframes for animations */
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
   }
-  to {
-    transform: rotate(360deg);
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  
+  0% {
+    transform: translateY(15px);
+    transition:  all 0.15s cubic-bezier(.25,.8,.25,1);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0px);
+    transition:  all 0.15s cubic-bezier(.25,.8,.25,1);
+    opacity: 1;
+  }
+}
+
+
+@keyframes fadeInUp2 {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
   }
 }
