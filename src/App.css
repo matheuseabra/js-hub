@@ -48,7 +48,8 @@ body {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
   grid-gap: 15px;
-  margin: 0;
+  margin: 10px 0;
+  padding: 0 1em;
   list-style-type: none;
   animation: .45s ease-in-out 0s fadeInUp; 
 }
@@ -167,6 +168,33 @@ body {
 .scene_element--fadeinright {
   animation-name: fadeInRight;
 }
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .productList {
+    grid-template-columns: 1fr;
+  }
+} 
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .productList {
+    grid-template-columns: 1fr 1fr;
+  }
+} 
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .productList {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}
 
 /* Keyframes for animations */
 
