@@ -4,6 +4,11 @@
 
 A simple React app example displaying a list of the hottest Javascript tools for developers.
 
+## Live Demo
+
+<a target="_blank" href="https://github.com/matheuseabra/the-js-stack">https://github.com/matheuseabra/the-js-stack</a>
+
+
 ## Running locally
 
 Install project dependencies: 
