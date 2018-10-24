@@ -7,7 +7,7 @@ const ProductItem = (props) => {
         <li>        
             <h3>{title}</h3>
             <p>{description}</p>
-            <a target="_blank" href={url}> Visit</a> 
+            <a target="_blank" rel="noopener noreferrer" href={url}> Visit</a> 
         </li>
     );
 }

@@ -9,7 +9,7 @@ export default class ProductsList extends Component {
         this.state = {
             products: [],
             productInfo: {},
-            page: 1
+            page: 1,
         }
     }
 
@@ -18,9 +18,8 @@ export default class ProductsList extends Component {
     }
 
     loadProducts = async (page = 1) => {
-        const response = await api.get(`/products?page=${page}`);
+        const response = await api.get(`/products?limit=${page}`);
         const { docs, ...productInfo } = response.data;
-
         this.setState({ products: docs, productInfo, page });
     }
 
@@ -38,10 +37,8 @@ export default class ProductsList extends Component {
         this.loadProducts(currentPage);
     }
 
-    
 
     render() {
-        const products = this.state.products;
         return (
             <div>
                 <ul className="productList">
@@ -52,8 +49,8 @@ export default class ProductsList extends Component {
                     }
                 </ul>
                 <div className="pagination">
-                    <a className="btn">Previous</a>
-                    <a className="btn btn-primary">Next</a>
+                    <button className="btn">Previous</button>
+                    <button className="btn btn-primary">Next</button>
                 </div>
             </div>
         )

@@ -5,8 +5,8 @@ const Header = () => {
         <div>
            <header className="header">
               <div className="branding"> 
-                <h3>Product Hunt Clone</h3>
-                <p>Search for the hottest products on the web</p>
+                <h3>the js stack</h3>
+                <p>A curated list of the hottest Javascript tools for developers.</p>
               </div>
            </header> 
         </div>

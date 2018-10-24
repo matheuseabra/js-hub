@@ -13,18 +13,18 @@ body {
 }
 
 .header {
-  background: linear-gradient(45deg, rgb(224, 147, 4), mediumslateblue);
+  background: linear-gradient(45deg, #ffee1f, #ffee1f);
   padding: 3em;
   display: flex;
   flex-direction: column wrap;
   align-items: center;
   justify-content: space-between;
-  color: white;
+  color: #000;
 }
 
 .header h3 {
   font-family: 'Bungee Shade', cursive;
-  font-size: 2em;
+  font-size: 2.2em;
   margin: 0;
   padding: 0;
 }
@@ -58,7 +58,7 @@ body {
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-around;
-  background-color: #FFF;
+  background-color: white;
   padding: 1.5em 1em;
   border-radius: 5px;
   margin: 0;
@@ -76,20 +76,23 @@ body {
 
 .productList h3 {
   margin: 0;
-  color: orange;
+  color: black;
 }
 
 .productList p {
-  color: #999;
+  color: #777;
   min-width: 250px;
 }
 
 .productList a {
-  background-color: orange;
-  color: white;
-  font-weight: bold;
-  padding: 5px 25px;
+  background-color: black;
+  color: #ffee1f;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: .8em;
+  padding: 5px 15px;
   text-decoration: none;
+  text-transform: uppercase;
   border-radius: 3px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
@@ -103,9 +106,11 @@ body {
 
 
 .btn {
+  font-family: 'Montserrat', sans-serif;  
   padding: 10px 20px;
   text-align: center;
   margin: 0;
+  border: none;
   border-radius: 3px;
   font-weight: bold;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
