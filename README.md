@@ -2,13 +2,24 @@
 
 <img src="https://github.com/matheuseabra/the-js-stack/blob/master/docs/homepage.png" width='100%'>
 
-A simple react app example displaying a list of the hottest Javascript tools for developers.
+A simple React app example displaying a list of the hottest Javascript tools for developers.
 
-## Dependencies
+## Running locally
 
+Install project dependencies: 
+
+-  npm install
+
+Start the server:
+
+- npm start
+
+## Main dependencies
+- react
+- react-dom
+- react-router-dom
 - axios
 - react-transition-group
-- react-router-dom
 - gh-pages
 
 ## Contributing
