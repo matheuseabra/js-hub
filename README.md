@@ -6,7 +6,7 @@ A simple React app example displaying a list of the hottest Javascript tools for
 
 ## Live Demo
 
-<a target="_blank" href="https://matheuseabra.github.io/the-js-stack/">https://github.com/matheuseabra/the-js-stack</a>
+<a target="_blank" href="https://matheuseabra.github.io/the-js-stack/">https://matheuseabra.github.io/the-js-stack/</a>
 
 
 ## Running locally
