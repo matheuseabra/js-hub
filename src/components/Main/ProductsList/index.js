@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 import api from '../../../services/api';
 import ProductItem from './ProductItem';
+import ProductsDetail from '../ProductsDetail';
 
 export default class ProductsList extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
+            showModal: false,
             products: [],
             productInfo: {},
             page: 1,
@@ -37,6 +39,13 @@ export default class ProductsList extends Component {
         this.loadProducts(currentPage);
     }
 
+    showModal = () => {
+        
+    }
+
+    hideModal = () => {
+        
+    }
 
     render() {
         return (
@@ -46,6 +55,9 @@ export default class ProductsList extends Component {
                         this.state.products.map(product => (
                             <ProductItem key={product._id} product={product} />
                         ))
+                    }
+                    {
+                     this.state.showModal ? <ProductsDetail />: null    
                     }
                 </ul>
                 <div className="pagination">
