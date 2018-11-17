@@ -1,5 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Bungee+Shade');
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,700');
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700');
+
+:root {
+  --primary: #ffee1f;
+  --primary-light: #f8f19d;
+  --primary-dark: #ebd808;
+
+  --white: #fff;
+  --black: #111;
+
+  --font: 'Source Code Pro', monospace;
+  --font-light: 300;
+  --font-bold: 700;
+}
 
 * {
   outline: 0;
@@ -8,12 +21,12 @@
 
 body {
   background-color: #f7f7f7;
-  font-family: 'Montserrat', sans-serif;  
+  font-family: 'Source Code Pro', monospace;  
   font-weight: 300;
 }
 
 .header {
-  background: linear-gradient(45deg, #ffee1f, #ffee1f);
+  background: linear-gradient(45deg, var(--primary-light), var(--primary), var(--primary-dark));
   padding: 3em;
   display: flex;
   flex-direction: column wrap;
@@ -43,7 +56,7 @@ body {
   text-align: center;
 }
 
-.productList {
+.repoList {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
@@ -54,11 +67,11 @@ body {
   animation: .45s ease-in-out 0s fadeInUp; 
 }
 
-.productList li {
+.repoList .repo-item {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-around;
+  justify-content: space-between;
   background-color: white;
   padding: 1.5em 1em;
   border-radius: 5px;
@@ -69,23 +82,46 @@ body {
   transform: translateY(0px);
 }
 
-.productList li:hover {
+.repoList .repo-item .repo-stats {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.repo-stats .repo-stat {
+    margin: 5px 0;
+}
+
+.repoList .repo-item:hover {
   transform: translateY(-8px);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
-.productList h3 {
+.repoList h3 {
   margin: 0;
   color: black;
 }
 
-.productList p {
+.repoList p {
   color: #777;
   min-width: 250px;
 }
 
-.productList a {
+.dialog {
+  border-bottom: 2px solid rgba(0,0,0,0.2);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.repo-avatar {
+  padding: 0;
+  vertical-align: middle;
+  margin-right: 10px;
+  width: 10%;
+  border-radius: 100%;
+}
+
+.repoList a, .repoList .btn-black {
   background-color: black;
   color: #ffee1f;
   font-weight: 700;
@@ -99,11 +135,38 @@ body {
 }
 
 .pagination {
-  padding: 2em;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
+  list-style: none;
+  display: inline-flex;
+  margin: 20px 11px;
+  padding: 0;
+}
+
+
+.pagination .pagination-item a , .pagination .pagination-next a, .pagination .pagination-prev a {
+  color: #777;
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-radius: 3px;
+  padding: .5em;
+  margin: 0px 5px;
+  text-align: center;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.pagination .pagination-active a {
+  color: #222;
+  font-weight: 700;
+  background-color: #ebd808;
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-radius: 3px;
+  text-align: center;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 } 
+
+.pagination .pagination-disabled a {
+  opacity: 0.4;
+}
 
 
 .btn {
@@ -123,9 +186,29 @@ body {
 }
 
 .btn-primary {
+  font-weight: 700;
+  padding: 5px 20px;
+  text-decoration: none;
   background-color: orange;
   color: white;
 } 
+
+input[type="text"] {
+  font-family: var(--font);
+  width: 32vw;
+  margin: 0;
+  border-radius: 3px;
+  background-color: #fff;
+  color: #777;
+  border: 2px solid white;
+  padding: 1em;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+input[type="text"]::input-placeholder { 
+  color: #777;
+}
+
 
 /* Animations */
 
@@ -171,30 +254,24 @@ body {
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-  .productList {
+  .repoList {
     grid-template-columns: 1fr;
   }
 } 
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-  .productList {
+  .repoList {
     grid-template-columns: 1fr 1fr;
   }
 } 
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-  .productList {
+  .repoList {
     grid-template-columns: 1fr 1fr 1fr;
   }
-} 
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {} 
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {}
+}
 
 /* Keyframes for animations */
 
