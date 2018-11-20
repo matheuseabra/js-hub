@@ -6,10 +6,10 @@ import './App.css'
 class App extends Component {
   render() {
     return (
-      <div>
+      <React.Fragment>
         <Header />
         <RepositoriesList />
-      </div>
+      </React.Fragment>
     );
   }
 }

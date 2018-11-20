@@ -13,7 +13,7 @@ export default class RepositoriesList extends Component {
             repos: [],
             total: null,
             limit: 20,
-            currentPage: 5
+            currentPage: 1
         }
     }
 
@@ -48,7 +48,8 @@ export default class RepositoriesList extends Component {
     
     render() {
         return (
-            <div>
+            <div className="container">
+                <h2>Featured repositories</h2> 
                 <ul className="repoList">
                     {
                         this.state.repos.map(repo => (

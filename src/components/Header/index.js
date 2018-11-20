@@ -1,17 +1,15 @@
 import React from 'react'
-import Search from './Search/Search'
 
 const Header = () => {
     return (
-        <div>
+        <React.Fragment>
            <header className="header">
               <div className="branding"> 
-                <h3>the js stack</h3>
-                <p>A curated list of the hottest Javascript tools for developers.</p>
-                <Search />
+                <h1>Tools for JS devs</h1>
+                <p>A curated list of top JavaScript tools for developers.</p>
               </div>
            </header> 
-        </div>
+        </React.Fragment>
     )
 }
 

@@ -25,6 +25,11 @@ body {
   font-weight: 300;
 }
 
+
+.container {
+  padding: 0 3em;
+}
+
 .header {
   background: linear-gradient(45deg, var(--primary-light), var(--primary), var(--primary-dark));
   padding: 3em;
@@ -35,25 +40,12 @@ body {
   color: #000;
 }
 
-.header h3 {
-  font-family: 'Bungee Shade', cursive;
+.header h1 {
+  font-family: 'Bungee Shade', display;
+  font-weight: 700;  
   font-size: 2.2em;
   margin: 0;
   padding: 0;
-}
-
-.nav {
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
-  vertical-align: middle;
-  display: inline-flex;
-}
-
-.nav .nav-item {
-  margin: 0 30px;
-  font-weight: bold;
-  text-align: center;
 }
 
 .repoList {
@@ -61,10 +53,19 @@ body {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
   grid-gap: 15px;
-  margin: 10px 0;
-  padding: 0 1em;
+  padding: 0;
+  margin: 0;
   list-style-type: none;
   animation: .45s ease-in-out 0s fadeInUp; 
+}
+
+.repoList h3 {
+  margin: 0;
+  color: black;
+}
+
+.repoList p {
+  color: #777;
 }
 
 .repoList .repo-item {
@@ -85,11 +86,17 @@ body {
 .repoList .repo-item .repo-stats {
     list-style-type: none;
     margin: 0;
+    font-weight: 700;
     padding: 0;
 }
 
 .repo-stats .repo-stat {
     margin: 5px 0;
+}
+
+.repoList .repo-item .repo-stats .repo-stat p {
+  vertical-align: middle;
+  line-height: 1;
 }
 
 .repoList .repo-item:hover {
@@ -98,47 +105,58 @@ body {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
-.repoList h3 {
-  margin: 0;
-  color: black;
-}
 
-.repoList p {
-  color: #777;
-  min-width: 250px;
-}
 
-.dialog {
-  border-bottom: 2px solid rgba(0,0,0,0.2);
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-}
-
-.repo-avatar {
+.dialog-container .repo-avatar {
   padding: 0;
   vertical-align: middle;
   margin-right: 10px;
   width: 10%;
   border-radius: 100%;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
-.repoList a, .repoList .btn-black {
+.dialog-container .repo-link {
   background-color: black;
   color: #ffee1f;
   font-weight: 700;
   letter-spacing: 1px;
+  cursor: pointer;
   font-size: .8em;
-  padding: 5px 15px;
+  margin: 10px 0;
+  padding: 10px 15px;
   text-decoration: none;
   text-transform: uppercase;
   border-radius: 3px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
+.dialog-container .repo-stats {
+  margin-top: 20px;
+  padding: 10px 0;
+  list-style-type: none;
+}
+
+.dialog-container .repo-stats .repo-stat {
+  margin: 0;
+  vertical-align: middle;
+  line-height: 1.5;
+  font-weight: 700;
+  padding: 5px 0;
+}
+
+.dialog-container .repo-git_url {
+  padding: .7em;
+  margin: 10px 0; 
+  border: 2px solid #B5B5B5;
+  border-radius: 3px;
+}
+
 .pagination {
   list-style: none;
   display: inline-flex;
-  margin: 20px 11px;
-  padding: 0;
+  margin: 20px 0;
+  padding: 20px 0;
 }
 
 
@@ -202,54 +220,11 @@ input[type="text"] {
   color: #777;
   border: 2px solid white;
   padding: 1em;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
 input[type="text"]::input-placeholder { 
   color: #777;
-}
-
-
-/* Animations */
-
-.fade-enter {
-  opacity: 0.01;
-}
-
-.fade-enter.fade-enter-active {
-  opacity: 1;
-  transition: opacity 500ms ease-in;
-}
-
-.fade-leave {
-  opacity: 1;
-}
-
-.fade-leave.fade-leave-active {
-  opacity: 0.01;
-  transition: opacity 300ms ease-in;
-}
-
-.scene_element {
-  animation-duration: 0.25s;
-  transition-timing-function: ease-in;
-  animation-fill-mode: both;
-
-}
-
-/** An element that fades in */
-.scene_element--fadein {
-  animation-name: fadeIn;
-}
-
-/** An element that fades in and slides up */
-.scene_element--fadeinup {
-  animation-name: fadeInUp;
-}
-
-/** An element that fades in and slides from the right */
-.scene_element--fadeinright {
-  animation-name: fadeInRight;
 }
 
 /* Extra small devices (phones, 600px and down) */
