@@ -25,7 +25,10 @@ body {
   font-weight: 300;
 }
 
-
+i {
+  position: relative;
+  bottom: 0px;
+}
 .container {
   padding: 0 3em;
 }
@@ -41,7 +44,7 @@ body {
 }
 
 .header h1 {
-  font-family: 'Bungee Shade', display;
+  font-family: 'Source Code Pro', monospace;
   font-weight: 700;  
   font-size: 2.2em;
   margin: 0;
@@ -105,8 +108,6 @@ body {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
-
-
 .dialog-container .repo-avatar {
   padding: 0;
   vertical-align: middle;
@@ -123,12 +124,16 @@ body {
   letter-spacing: 1px;
   cursor: pointer;
   font-size: .8em;
-  margin: 10px 0;
+  margin: 10px 0 20px 0;
   padding: 10px 15px;
   text-decoration: none;
   text-transform: uppercase;
   border-radius: 3px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.dialog-container .repo-description {
+  margin-bottom: 30px;
 }
 
 .dialog-container .repo-stats {
@@ -147,9 +152,15 @@ body {
 
 .dialog-container .repo-git_url {
   padding: .7em;
-  margin: 10px 0; 
-  border: 2px solid #B5B5B5;
+  margin-top: 20px;
+  color: #777;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   border-radius: 3px;
+}
+
+.dialog-container .copy-clipboard a {
+  color: #777;
+  text-decoration: none;
 }
 
 .pagination {

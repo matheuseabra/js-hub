@@ -1,29 +1,30 @@
-# The JS Stack
+# JS tools for devs
 
-![the js stack homepage](https://github.com/matheuseabra/the-js-stack/blob/master/docs/homepage.png)
+![the js-tools-for-devs homepage](https://github.com/matheuseabra/js-tools-for-devs/blob/master/docs/homepage.png)
 
-A simple React app example displaying a list of the hottest Javascript tools for developers.
+A curated list of top open-source JavaScript libraries, frameworks and tools for developers.
 
 ## Live Demo
 
-[https://matheuseabra.github.io/the-js-stack](https://matheuseabra.github.io/the-js-stack)
+[https://matheuseabra.github.io/js-tools-for-devs](https://matheuseabra.github.io/js-tools-for-devs)
 
 ## Running locally
 
 Install project dependencies: 
 
--npm install
+- npm install
 
 Start the server:
 
--npm start
+- npm start
 
 ## Main dependencies
 -react
 -react-dom
 -react-router-dom
 -axios
--react-transition-group
+-ever-green-ui
+-react-js-pagination
 -gh-pages
 
 ## Contributing

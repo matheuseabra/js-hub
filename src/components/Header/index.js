@@ -5,8 +5,8 @@ const Header = () => {
         <React.Fragment>
            <header className="header">
               <div className="branding"> 
-                <h1>Tools for JS devs</h1>
-                <p>A curated list of top JavaScript tools for developers.</p>
+                <h1>JS tools for devs</h1>
+                <p>A curated list of top open-source JavaScript libraries, frameworks and tools for developers.</p>
               </div>
            </header> 
         </React.Fragment>

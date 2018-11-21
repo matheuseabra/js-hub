@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import api from '../../services/api'
 import Repository from './Repository/index'
 import Pagination from "react-js-pagination"
-
+import { Icon } from 'evergreen-ui'
 
 export default class RepositoriesList extends Component {
 
@@ -49,7 +49,7 @@ export default class RepositoriesList extends Component {
     render() {
         return (
             <div className="container">
-                <h2>Featured repositories</h2> 
+                <h2>Featured repositories <Icon icon="star" color="warning" /></h2>
                 <ul className="repoList">
                     {
                         this.state.repos.map(repo => (
