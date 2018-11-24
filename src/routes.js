@@ -1,13 +1,19 @@
-import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import React from 'react'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
-import Main from './src/components/Main/index';
+import RepositoriesList from './components/RepositoriesList'
+import TopicsList from './components/TopicsList'
+import UsersList from './components/UsersList'
 
-export default const Router = () => (
+const Router = () => (
     <BrowserRouter>
         <Switch>
-            <Route path='/' component={Main} />
+            <Route path='/' component={RepositoriesList} />
+            <Route path='/topics' component={TopicsList} />
+            <Route path='/users' component={UsersList} />
         </Switch>
     </BrowserRouter>
     
 )
+
+export default Router

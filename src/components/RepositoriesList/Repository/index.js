@@ -52,7 +52,7 @@ export default  class Repository extends Component {
                                 <span><Icon icon="issue-closed" color="muted" />  {open_issues_count} open issues</span>
                             </li>
                         </ul>
-                        <a className="repo-link" target="_blank" href={html_url}>GitHub repository</a>
+                        <a className="repo-link" target="_blank" rel="noopener noreferrer" href={html_url}>GitHub repository</a>
                     </div>
                 </Dialog>
                 <li className="repo-item" onClick={this.showModal}>
