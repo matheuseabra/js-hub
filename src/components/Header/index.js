@@ -5,13 +5,9 @@ const Header = () => {
         <React.Fragment>
            <header className="header">
               <div className="branding"> 
-                <h3>JS dev tools</h3>
+                <h3>JS Dev Tools</h3>
+                <p>A curated list of top open-source JavaScript libraries, frameworks and tools for developers.</p>
               </div>
-              <nav className="nav">
-                <li className="nav-item">Repositories</li>
-                <li className="nav-item">Topics</li>
-                <li className="nav-item">Users</li>
-              </nav>
            </header> 
         </React.Fragment>
     )

@@ -33,7 +33,7 @@ i {
 
 .header {
   background: linear-gradient(45deg, var(--primary-light), var(--primary), var(--primary-dark));
-  padding:  1em 3em;
+  padding:  3em;
   margin-bottom: 25px;
   display: flex;
   flex-direction: column wrap;
@@ -46,7 +46,7 @@ i {
 .header h3 {
   font-family: var(--font);
   font-weight: var(--font-bold);  
-  font-size: 1.5em;
+  font-size: 2em;
   margin: 0;
   padding: 0;
 }
@@ -272,7 +272,7 @@ input[type="text"]::input-placeholder {
 }
 
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 468px) {
   .repo-list {
     grid-template-columns: 1fr;
   }
@@ -289,6 +289,12 @@ input[type="text"]::input-placeholder {
 @media only screen and (min-width: 768px) {
   .repo-list {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media only screen and (min-width: 968px) {
+  .repo-list {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
 

@@ -1,4 +1,4 @@
-# JS tools for devs
+# JS Dev Tools
 
 ![the js-tools-for-devs homepage](https://github.com/matheuseabra/js-tools-for-devs/blob/master/docs/homepage.png)
 
@@ -19,13 +19,11 @@ Start the server:
 - npm start
 
 ## Main dependencies
--react
--react-dom
--react-router-dom
--axios
--ever-green-ui
--react-js-pagination
--gh-pages
+- react
+- react-dom
+- axios
+- ever-green-ui
+- gh-pages
 
 ## Contributing
 
