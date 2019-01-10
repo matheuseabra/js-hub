@@ -15,6 +15,32 @@ export const FeaturedRepos = props => (
     </div>
 )
 
+export const VueRepos = props => (
+    <div className="repo-category">
+        <h2 className="category-title">Vue.js</h2>
+        <ul className="repo-list">
+            {
+                props.vue.map(repo => (
+                    <Repository key={repo.id} repo={repo} />
+                ))
+            }
+        </ul>
+    </div>
+)
+
+export const AngularRepos = props => (
+    <div className="repo-category">
+        <h2 className="category-title">Angular</h2>
+        <ul className="repo-list">
+            {
+                props.angular.map(repo => (
+                    <Repository key={repo.id} repo={repo} />
+                ))
+            }
+        </ul>
+    </div>
+)
+
 export const ReactRepos = props => (
     <div className="repo-category">
         <h2 className="category-title">React</h2>
@@ -48,6 +74,8 @@ export default class RepositoriesList extends Component {
         this.state = {
             react: [],
             node: [],
+            vue: [],
+            angular: [],
             repos: [],
             total: null,
             limit: 12,
@@ -57,13 +85,15 @@ export default class RepositoriesList extends Component {
 
     componentDidMount() {
         this.loadFeaturedRepos()
+        this.loadVueRepos()
+        this.loadAngularRepos()
         this.loadReactRepos()
         this.loadNodeRepos()
     }
 
     async loadNodeRepos() {
         try {
-            const nodeEndPoint = `/search/repositories?q=nodejs+topic:nodejs&page=1&per_page=12&sort=stars&order=desc`
+            const nodeEndPoint = `/search/repositories?q=nodejs+topic:nodejs&page=1&per_page=8&sort=stars&order=desc`
             const response = await api.get(nodeEndPoint, { headers: {'Accept': 'application/vnd.github.mercy-preview+json'}})
             this.setState({ 
                 node: response.data.items
@@ -73,9 +103,33 @@ export default class RepositoriesList extends Component {
         }
     }
 
+    async loadVueRepos() {
+        try {
+            const vueEndPoint = `/search/repositories?q=vue+topic:vuejs&page=1&per_page=8&sort=stars&order=desc`
+            const response = await api.get(vueEndPoint, { headers: {'Accept': 'application/vnd.github.mercy-preview+json'}})
+            this.setState({ 
+                vue: response.data.items
+            })
+        } catch (err) {
+            console.log('Error loading vue repositories: ', err)
+        }
+    }
+
+    async loadAngularRepos() {
+        try {
+            const angularEndPoint = `/search/repositories?q=angular+topic:angular&page=1&per_page=8&sort=stars&order=desc`
+            const response = await api.get(angularEndPoint, { headers: {'Accept': 'application/vnd.github.mercy-preview+json'}})
+            this.setState({ 
+                angular: response.data.items
+            })
+        } catch (err) {
+            console.log('Error loading angular repositories: ', err)
+        }
+    }
+
     async loadReactRepos() {
         try {
-            const reactEndPoint = `/search/repositories?q=react+topic:react&page=1&per_page=12&sort=stars&order=desc`
+            const reactEndPoint = `/search/repositories?q=react+topic:reactjs&page=1&per_page=8&sort=stars&order=desc`
             const response = await api.get(reactEndPoint, { headers: {'Accept': 'application/vnd.github.mercy-preview+json'}})
             this.setState({ 
                 react: response.data.items
@@ -87,7 +141,7 @@ export default class RepositoriesList extends Component {
     
     async loadFeaturedRepos() {
         try {
-            const jsEndPoint = `/search/repositories?q=javascript+topic:javascript&page=1&per_page=12&sort=stars&order=desc`        
+            const jsEndPoint = `/search/repositories?q=javascript+topic:javascript&page=1&per_page=8&sort=stars&order=desc`        
             const response = await api.get(jsEndPoint, { headers: {'Accept': 'application/vnd.github.mercy-preview+json'}})
             this.setState({ 
                 repos: response.data.items,
@@ -101,11 +155,13 @@ export default class RepositoriesList extends Component {
    
     render() {
         return (
-            <div>          
+            <div className="app">          
                 <FeaturedRepos repos={this.state.repos} />
-                <NodeRepos node={this.state.node} />         
-                <ReactRepos react={this.state.react} />              
-            </div>        
+                <NodeRepos node={this.state.node} />
+                <ReactRepos react={this.state.react} />
+                <VueRepos vue={this.state.vue} /> 
+                <AngularRepos angular={this.state.angular} />
+            </div>     
         )
     }
 }
