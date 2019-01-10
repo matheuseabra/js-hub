@@ -6,7 +6,7 @@ A curated list of top open-source JavaScript libraries, frameworks and tools for
 
 ## Live Demo
 
-[https://matheuseabra.github.io/js-tools-for-devs](https://matheuseabra.github.io/js-tools-for-devs)
+[https://matheuseabra.me/js-dev-tools](https://matheuseabra.me/js-dev-tools)
 
 ## Running locally
 
