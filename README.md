@@ -28,3 +28,7 @@ Start the server:
 ## Contributing
 
 If you want to contribute, please open an a pull-request
+
+## License
+
+This project is lincensed under the GNU General Public License v3.0
