@@ -1,6 +1,6 @@
-# JS Dev Tools
+# JS Stack
 
-![the js-tools-for-devs homepage](https://github.com/matheuseabra/js-tools-for-devs/blob/master/docs/homepage.png)
+![the js-stack homepage](https://github.com/matheuseabra/js-stack/blob/master/.github/homepage.png)
 
 A curated list of top open-source JavaScript libraries, frameworks and tools for developers.
 
@@ -8,24 +8,55 @@ A curated list of top open-source JavaScript libraries, frameworks and tools for
 
 [https://matheuseabra.me/js-dev-tools](https://matheuseabra.me/js-dev-tools)
 
-## Running locally
+### Prerequisites
 
-Install project dependencies:
+- Docker
+- Node
+- npm
 
-- npm install
+### Quickstart 🔥
 
-Start the server:
+These instructions will get you a copy of the project up and running on your local machine for development.
 
-- npm start
+```
+$ git clone https://github.com/academicmerit/ftl-ui-template
+$ cd ftl-ui-template
+$ bin/build
+$ yarn install
+$ docker-compose up
+```
 
-## Main dependencies
+Runs the app in the development mode. Open http://localhost:3000 to view it in the browser.
+
+The page will reload if you make edits. You will also see any lint errors in the console.
+
+## Running the tests ⏩️
+
+```
+$ bin/runtests
+```
+
+Run the tests. Launches the Jest test runner in the interactive watch mode.
+
+## Deployment ✈️
+
+```
+$ bin/build
+```
+
+Builds the app for production to the build folder.
+
+## Main dependencies 🔧
 
 - react
 - react-dom
-- react-testing-library
+- react-router-dom
 - axios
 - ever-green-ui
 - gh-pages
+- typescript
+- styled-components
+- react-testing-library
 
 ## Contributing
 
