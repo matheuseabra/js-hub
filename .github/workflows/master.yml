@@ -6,8 +6,6 @@ jobs:
 
 build-and-publish:
 
-name: build and publish
-
 runs-on: ubuntu-latest
 
 steps:
