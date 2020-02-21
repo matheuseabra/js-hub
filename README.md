@@ -1,6 +1,6 @@
 # JS Stack
 
-![the js-stack homepage](https://github.com/matheuseabra/js-stack/blob/master/.github/homepage.png)
+![the js-stack homepage](https://github.com/matheuseabra/js-stack/.github/homepage.png)
 
 A curated list of top open-source JavaScript libraries, frameworks and tools for developers.
 

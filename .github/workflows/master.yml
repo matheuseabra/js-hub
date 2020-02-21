@@ -1,17 +1,57 @@
-name: CI
+on: push
 
-on: [push]
+name: npm build, test and publish
 
 jobs:
-  build:
 
-    runs-on: ubuntu-latest
+build-and-publish:
 
-    steps:
-    - uses: actions/checkout@v2
-    - name: Install dependencies
-      run: yarn install
-    - name: Run tests
-      run: bin/test
-    - name: Build
-      run: bin/build
+name: build and publish
+
+runs-on: ubuntu-latest
+
+steps:
+
+- uses: actions/checkout@master
+
+- name: yarn install
+
+uses: actions/npm@master
+
+with:
+
+args: install
+
+- name: npm test
+
+uses: actions/npm@master
+
+with:
+
+args: run test
+
+- name: docker build
+
+uses: actions/docker/cli@master
+
+with:
+
+args: build -t matheuseanra/js-stack .
+
+- name: docker login
+
+uses: actions/docker/login@master
+
+env:
+
+DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+
+DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+
+- name: docker push
+
+uses: actions/docker/cli@master
+
+with:
+
+args: push matheuseabra/js-stack
