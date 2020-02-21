@@ -10,7 +10,7 @@ A curated list of top open-source JavaScript libraries, frameworks and tools for
 
 ## Running locally
 
-Install project dependencies: 
+Install project dependencies:
 
 - npm install
 
@@ -19,8 +19,10 @@ Start the server:
 - npm start
 
 ## Main dependencies
+
 - react
 - react-dom
+- react-testing-library
 - axios
 - ever-green-ui
 - gh-pages
