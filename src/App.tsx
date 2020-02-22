@@ -5,11 +5,16 @@ import { Header } from "./components";
 import { SideSheet, SearchInput, Pane } from "evergreen-ui";
 
 import useTheme from "./hooks/useTheme";
+import { DefaultTheme } from "styled-components";
 import { GlobalStyles } from "./styles/global";
+import { lightTheme } from "./styles/theme";
 
 const App: React.FC = () => {
   const [showSearch, setShowSearch] = useState(false);
-  const { theme, toggleTheme, ThemeProvider } = useTheme();
+  const [theme, ThemeProvider, toggleTheme] = useTheme<DefaultTheme>(
+    "theme",
+    lightTheme
+  );
 
   return (
     <ThemeProvider theme={theme}>

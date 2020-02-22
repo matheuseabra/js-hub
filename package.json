@@ -1,35 +1,27 @@
 {
   "name": "js-stack",
-  "homepage": "https://matheuseabra.me/js-stack",
   "version": "0.1.0",
-  "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "@types/jest": "^24.0.0",
-    "@types/node": "^12.0.0",
-    "@types/react": "^16.9.0",
-    "@types/react-dom": "^16.9.0",
-    "@types/react-router-dom": "^5.1.3",
-    "@types/styled-components": "^4.4.3",
     "axios": "^0.19.2",
+    "env-cmd": "^10.1.0",
     "evergreen-ui": "^4.23.0",
     "gh-pages": "^2.2.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
-    "styled-components": "^5.0.1",
-    "typescript": "~3.7.2"
+    "styled-components": "^5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --watchAll",
+    "build:development": "env-cmd -f .env.development yarn build",
+    "build:production": "env-cmd -f .env.production yarn build",
+    "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "yarn build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -b master -d build",
+    "rm:build": "sudo rm -rf build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -58,6 +50,16 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "@types/jest": "^24.0.0",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
+    "@types/react-router-dom": "^5.1.3",
+    "@types/styled-components": "^4.4.3",
+    "typescript": "~3.7.2",
     "husky": "^4.2.3",
     "lint-staged": "^10.0.7"
   }

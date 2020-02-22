@@ -1,4 +1,4 @@
-name: MasterDeployCI
+name: Deploy
 on:
   push:
     branches:
@@ -19,4 +19,6 @@ jobs:
       - name: Install Packages
         run: yarn install
       - name: Build
-        run: yarn build
+        run: CI=true yarn build
+      - name: Test
+        run: CI=true yarn test

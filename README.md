@@ -1,6 +1,6 @@
 # JS Stack
 
-![the js-stack homepage](https://github.com/matheuseabra/js-stack/.github/homepage.png)
+![the js-stack homepage](https://github.com/matheuseabra/js-stack/blob/master/.github/docs/homepage.png)
 
 A curated list of top open-source JavaScript libraries, frameworks and tools for developers.
 
@@ -19,9 +19,8 @@ A curated list of top open-source JavaScript libraries, frameworks and tools for
 These instructions will get you a copy of the project up and running on your local machine for development.
 
 ```
-$ git clone https://github.com/academicmerit/ftl-ui-template
-$ cd ftl-ui-template
-$ bin/build
+$ git clone https://github.com/matheuseabra/js-stack
+$ cd js-stack
 $ yarn install
 $ docker-compose up
 ```
