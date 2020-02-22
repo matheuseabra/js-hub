@@ -28,7 +28,9 @@ export const RepoHeader = styled.div`
 
 export const RepoName = styled.h3`
   color: ${props => props.theme.colors.text};
-  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  margin: 0;
 `;
 
 export const RepoDescription = styled.p`

@@ -3,12 +3,15 @@ import githubAPI from "../../services/githubAPI";
 import RepositoryType from "../../types/RepositoryType";
 import Repository from "./Repository/Repository";
 import Loader from "../Loader/Loader";
-import "./Repositories.css";
+import {
+  Container,
+  CategoryTitle,
+  RepoGrid
+} from "../Repositories/Repositories.styles";
 
 const Repositories: React.FC = () => {
   const [repositories, setRepositories] = useState<[RepositoryType]>();
   const [isLoading, setIsLoading] = useState(false);
-
   const [term, setTerm] = useState("javascript");
   const [order, setOrder] = useState("desc");
   const [currentPage, setCurrentPage] = useState(1);
@@ -51,14 +54,22 @@ const Repositories: React.FC = () => {
     setTerm(e.target.value);
   };
 
+  const handleOrderChange = (e: any) => {
+    setOrder(e.target.value);
+  };
+
+  const handlePageChange = (e: any) => {
+    setCurrentPage(e.target.value);
+  };
+
   if (isLoading) {
     return <Loader />;
   }
 
   return (
-    <section className="repo-category">
-      <h2 className="category-title">JavaScript</h2>
-      <ul className="repo-grid">
+    <Container>
+      <CategoryTitle>JavaScript</CategoryTitle>
+      <RepoGrid>
         {repositories?.map(
           ({
             id,
@@ -82,8 +93,8 @@ const Repositories: React.FC = () => {
             />
           )
         )}
-      </ul>
-    </section>
+      </RepoGrid>
+    </Container>
   );
 };
 

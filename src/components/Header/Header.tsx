@@ -39,9 +39,9 @@ const Header: React.FC<HeaderProps> = ({ toggleTheme, setShowSearch }) => {
             <Icon icon="moon" color={colors.text} />
           )}
         </NavItem>
-        {/* <NavItem onClick={() => setShowSearch(true)}>
+        <NavItem onClick={() => setShowSearch(true)}>
           <Icon icon="search" color={colors.text} />
-        </NavItem> */}
+        </NavItem>
       </Nav>
     </Container>
   );
