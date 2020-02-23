@@ -1,4 +1,4 @@
-export interface RepositoryType {
+export type RepositoryType = {
   id: number;
   name: string;
   owner: {
@@ -12,4 +12,4 @@ export interface RepositoryType {
   stargazers_count: number;
   forks_count: number;
   open_issues_count: number;
-}
+};

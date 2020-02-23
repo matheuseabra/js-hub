@@ -7,6 +7,7 @@ import {
   NodeRepos,
   TypescriptRepos
 } from "./pages";
+import { NotFound } from "./components";
 
 const Routes = () => {
   return (
@@ -16,6 +17,7 @@ const Routes = () => {
       <Route exact path="/react" component={ReactRepos} />
       <Route exact path="/vue" component={VueRepos} />
       <Route exact path="/typescript" component={TypescriptRepos} />
+      <Route component={NotFound} />
     </Switch>
   );
 };

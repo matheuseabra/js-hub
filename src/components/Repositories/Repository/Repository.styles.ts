@@ -6,9 +6,8 @@ export const Container = styled.li`
   justify-content: space-evenly;
   cursor: pointer;
   background-color: ${props => props.theme.colors.body};
-  padding: 1.5em 1em;
+  padding: 1em;
   border-radius: 5px;
-  margin: 0;
   border-bottom: 2px solid rgba(0, 0, 0, 0.2);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);

@@ -41,4 +41,20 @@ export const RepoGrid = styled.ul`
   margin: 0;
   list-style-type: none;
   animation: 0.45s ease-in-out 0s fadeInUp;
+
+  @media only screen and (max-width: 468px) {
+    grid-template-columns: 1fr;
+  }
+
+  @media only screen and (min-width: 600px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media only screen and (min-width: 768px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @media only screen and (min-width: 968px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 `;

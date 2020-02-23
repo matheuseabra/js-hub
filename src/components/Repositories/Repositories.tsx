@@ -20,8 +20,8 @@ const Repositories: React.FC<RepositoriesProps> = ({ term }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const [order, setOrder] = useState("desc");
-  const [currentPage, setCurrentPage] = useState(1);
-  const [limit, setLimit] = useState(24);
+  const [currentPage] = useState(1);
+  const [limit, setLimit] = useState(36);
 
   useEffect(() => {
     const fetchRepositories = async () => {
@@ -64,39 +64,41 @@ const Repositories: React.FC<RepositoriesProps> = ({ term }) => {
 
   return (
     <Container>
-      <Pane display="flex">
-        <Pane flex={1} alignItems="center" display="flex">
-          <CategoryTitle>{term}</CategoryTitle>
+      {!isLoading && repositories && (
+        <Pane display="flex">
+          <Pane flex={1} alignItems="center" display="flex">
+            <CategoryTitle>{term}</CategoryTitle>
+          </Pane>
+          <Pane>
+            <Filters order={order} handleOrderChange={handleOrderChange} />
+          </Pane>
         </Pane>
-        <Pane>
-          <Filters order={order} handleOrderChange={handleOrderChange} />
-        </Pane>
-      </Pane>
-
+      )}
       <RepoGrid>
-        {repositories?.map(
-          ({
-            id,
-            name,
-            description,
-            avatar_url,
-            html_url,
-            stargazers_count,
-            forks_count,
-            open_issues_count
-          }) => (
-            <Repository
-              key={id}
-              name={name}
-              description={description}
-              avatar_url={avatar_url}
-              html_url={html_url}
-              stargazers_count={stargazers_count}
-              forks_count={forks_count}
-              open_issues_count={open_issues_count}
-            />
-          )
-        )}
+        {!isLoading &&
+          repositories?.map(
+            ({
+              id,
+              name,
+              description,
+              avatar_url,
+              html_url,
+              stargazers_count,
+              forks_count,
+              open_issues_count
+            }) => (
+              <Repository
+                key={id}
+                name={name}
+                description={description}
+                avatar_url={avatar_url}
+                html_url={html_url}
+                stargazers_count={stargazers_count}
+                forks_count={forks_count}
+                open_issues_count={open_issues_count}
+              />
+            )
+          )}
       </RepoGrid>
     </Container>
   );
