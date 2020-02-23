@@ -15,7 +15,7 @@ test("renders a header properly", () => {
       </ThemeProvider>
     </MemoryRouter>
   );
-  const title = getByText(/JS Stack/i);
+  const title = getByText(/JS Hub/i);
 
   expect(title).toBeInTheDocument();
 });
