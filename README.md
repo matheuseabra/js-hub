@@ -2,6 +2,8 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/ea4d59e6-aa6e-433f-add1-5d6f25b9b640/deploy-status)](https://app.netlify.com/sites/js-stack/deploys)
 
+![](https://github.com/matheuseabra/js-stack/workflows/.github/workflows/master.yml/badge.svg)
+
 ![the js-stack homepage](https://github.com/matheuseabra/js-stack/blob/master/.github/docs/homepage.png)
 
 A curated list of top open-source JavaScript libraries, frameworks and tools for developers.
