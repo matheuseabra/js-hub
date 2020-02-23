@@ -2,7 +2,13 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { ThemeContext } from "styled-components";
 import { Icon } from "evergreen-ui";
-import { Container, Logotype, Nav, NavItem } from "../Header/Header.styles";
+import {
+  Container,
+  Logotype,
+  Menu,
+  Nav,
+  NavItem
+} from "../Header/Header.styles";
 
 interface HeaderProps {
   toggleTheme: Function;
@@ -15,9 +21,9 @@ const Header: React.FC<HeaderProps> = ({ toggleTheme, setShowSearch }) => {
   return (
     <Container>
       <Logotype>
-        <Link to="/">JS Stack</Link>
+        <Link to="/">JS Hub</Link>
       </Logotype>
-      <Nav>
+      <Menu>
         <NavItem>
           <Link to="/node">Node</Link>
         </NavItem>
@@ -33,7 +39,7 @@ const Header: React.FC<HeaderProps> = ({ toggleTheme, setShowSearch }) => {
         <NavItem>
           <Link to="/angular">Angular</Link>
         </NavItem>
-      </Nav>
+      </Menu>
       <Nav>
         <NavItem onClick={() => toggleTheme()}>
           {title === "dark" ? (

@@ -4,6 +4,14 @@ export const Container = styled.section`
   max-width: 1200px;
   margin: 0 auto;
   margin-bottom: 40px;
+
+  @media only screen and (max-width: 468px) {
+    margin: 0 20px 0 10px;
+  }
+
+  @media only screen and (min-width: 600px) {
+    margin: 0 20px 0 10px;
+  }
 `;
 
 export const FilterContainer = styled.div`
