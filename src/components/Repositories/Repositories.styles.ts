@@ -12,6 +12,14 @@ export const Container = styled.section`
   @media only screen and (min-width: 600px) {
     margin: 0 20px 0 10px;
   }
+
+  @media only screen and (min-width: 768px) {
+    margin: 0 auto;
+  }
+
+  @media only screen and (min-width: 968px) {
+    margin: 0 auto;
+  }
 `;
 
 export const FilterContainer = styled.div`
