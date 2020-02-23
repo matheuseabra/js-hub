@@ -1,4 +1,4 @@
-name: Install, build and test
+name: install-build-test
 on:
   push:
     branches:
