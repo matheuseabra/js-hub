@@ -18,6 +18,7 @@
     "build:development": "env-cmd -f .env.development yarn build",
     "build:production": "env-cmd -f .env.production yarn build",
     "test": "react-scripts test",
+    "test:ci": "react-scripts test --watchAll=false",
     "eject": "react-scripts eject",
     "predeploy": "yarn build",
     "deploy": "gh-pages -b master -d build",
