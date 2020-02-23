@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import githubAPI from "../../services/githubAPI";
-import RepositoryType from "../../types/RepositoryType";
+import { RepositoryType } from "../../types/RepositoryType";
 import Repository from "./Repository/Repository";
+import Filters from "../Filters/Filters";
+import { Pane } from "evergreen-ui";
 import Loader from "../Loader/Loader";
 import {
   Container,
@@ -9,22 +11,24 @@ import {
   RepoGrid
 } from "../Repositories/Repositories.styles";
 
-const Repositories: React.FC = () => {
+type RepositoriesProps = {
+  term?: string;
+};
+
+const Repositories: React.FC<RepositoriesProps> = ({ term }) => {
   const [repositories, setRepositories] = useState<[RepositoryType]>();
   const [isLoading, setIsLoading] = useState(false);
-  const [term, setTerm] = useState("javascript");
+
   const [order, setOrder] = useState("desc");
   const [currentPage, setCurrentPage] = useState(1);
   const [limit, setLimit] = useState(24);
 
-  const [query] = useState<string>(
-    `${term}+topic:${term}&page=${currentPage}&per_page=${limit}&sort=stars&order=${order}`
-  );
-
   useEffect(() => {
     const fetchRepositories = async () => {
       setIsLoading(true);
-      const response = await githubAPI.get(`/search/repositories?q=${query}`);
+      const response = await githubAPI.get(
+        `/search/repositories?q=${term}+topic:${term}&page=${currentPage}&per_page=${limit}&sort=stars&order=${order}`
+      );
       if (response.data) {
         setRepositories(
           response.data.items.map((item: RepositoryType) => ({
@@ -44,22 +48,14 @@ const Repositories: React.FC = () => {
       }
     };
     fetchRepositories();
-  }, [query]);
+  }, [term, currentPage, order, limit]);
 
-  const handleLimitChange = (e: any) => {
-    setLimit(e.target.value);
+  const handleLimitChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setLimit(e.currentTarget.valueAsNumber);
   };
 
-  const handleTermChange = (e: any) => {
-    setTerm(e.target.value);
-  };
-
-  const handleOrderChange = (e: any) => {
-    setOrder(e.target.value);
-  };
-
-  const handlePageChange = (e: any) => {
-    setCurrentPage(e.target.value);
+  const handleOrderChange = () => {
+    setOrder(prevState => (prevState === "desc" ? "asc" : "desc"));
   };
 
   if (isLoading) {
@@ -68,7 +64,15 @@ const Repositories: React.FC = () => {
 
   return (
     <Container>
-      <CategoryTitle>JavaScript</CategoryTitle>
+      <Pane display="flex">
+        <Pane flex={1} alignItems="center" display="flex">
+          <CategoryTitle>{term}</CategoryTitle>
+        </Pane>
+        <Pane>
+          <Filters order={order} handleOrderChange={handleOrderChange} />
+        </Pane>
+      </Pane>
+
       <RepoGrid>
         {repositories?.map(
           ({
@@ -96,6 +100,10 @@ const Repositories: React.FC = () => {
       </RepoGrid>
     </Container>
   );
+};
+
+Repositories.defaultProps = {
+  term: "JavaScript"
 };
 
 export default Repositories;

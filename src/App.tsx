@@ -11,10 +11,15 @@ import { lightTheme } from "./styles/theme";
 
 const App: React.FC = () => {
   const [showSearch, setShowSearch] = useState(false);
+  const [term, setTerm] = useState("javascript");
   const [theme, ThemeProvider, toggleTheme] = useTheme<DefaultTheme>(
     "theme",
     lightTheme
   );
+
+  const handleTermChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setTerm(e.currentTarget.value);
+  };
 
   return (
     <ThemeProvider theme={theme}>

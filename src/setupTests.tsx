@@ -4,14 +4,16 @@ import { MemoryRouter } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { lightTheme } from "./styles/theme";
 
-export interface MockedProviderProps {
+interface MockedProviderProps {
   children: React.ReactNode;
 }
 
-export const MockedProvider = (children: MockedProviderProps) => {
+export const MockedProvider: React.SFC<MockedProviderProps> = children => {
   return (
     <MemoryRouter>
-      <ThemeProvider theme={lightTheme}>{children}</ThemeProvider>
+      <ThemeProvider theme={lightTheme}>
+        <>{children}</>
+      </ThemeProvider>
     </MemoryRouter>
   );
 };

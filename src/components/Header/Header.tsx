@@ -25,10 +25,10 @@ const Header: React.FC<HeaderProps> = ({ toggleTheme, setShowSearch }) => {
           <Link to="/react">React</Link>
         </NavItem>
         <NavItem>
-          <Link to="/vue">Vue.js</Link>
+          <Link to="/vue">Vue</Link>
         </NavItem>
         <NavItem>
-          <Link to="/angular">Angular</Link>
+          <Link to="/typescript">TypeScript</Link>
         </NavItem>
       </Nav>
       <Nav>

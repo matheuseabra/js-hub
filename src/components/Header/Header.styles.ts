@@ -29,4 +29,8 @@ export const NavItem = styled.li`
   font-weight: bold;
   cursor: pointer;
   opacity: 0.75;
+
+  &:hover {
+    opacity: 1;
+  }
 `;

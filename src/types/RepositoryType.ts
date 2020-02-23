@@ -1,4 +1,4 @@
-export default interface Repository {
+export interface RepositoryType {
   id: number;
   name: string;
   owner: {
