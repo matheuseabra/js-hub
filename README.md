@@ -1,5 +1,7 @@
 # JS Stack
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ea4d59e6-aa6e-433f-add1-5d6f25b9b640/deploy-status)](https://app.netlify.com/sites/js-stack/deploys)
+
 ![the js-stack homepage](https://github.com/matheuseabra/js-stack/blob/master/.github/docs/homepage.png)
 
 A curated list of top open-source JavaScript libraries, frameworks and tools for developers.
@@ -11,6 +13,7 @@ A curated list of top open-source JavaScript libraries, frameworks and tools for
 ### Prerequisites
 
 - Docker
+- Docker-compose
 - Node
 - npm
 
@@ -21,7 +24,6 @@ These instructions will get you a copy of the project up and running on your loc
 ```
 $ git clone https://github.com/matheuseabra/js-stack
 $ cd js-stack
-$ yarn install
 $ docker-compose up
 ```
 
@@ -32,7 +34,7 @@ The page will reload if you make edits. You will also see any lint errors in the
 ## Running the tests ⏩️
 
 ```
-$ bin/runtests
+$ bin/test
 ```
 
 Run the tests. Launches the Jest test runner in the interactive watch mode.
@@ -51,8 +53,7 @@ Builds the app for production to the build folder.
 - react-dom
 - react-router-dom
 - axios
-- ever-green-ui
-- gh-pages
+- evergreen-ui
 - typescript
 - styled-components
 - react-testing-library
