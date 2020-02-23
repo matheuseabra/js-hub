@@ -2,6 +2,8 @@ import React from "react";
 
 import { Repositories } from "../components";
 
-const ReactRepos = () => <Repositories term="React" />;
+import reactLogo from "../assets/react.svg";
+
+const ReactRepos = () => <Repositories term="React" techLogo={reactLogo} />;
 
 export default ReactRepos;

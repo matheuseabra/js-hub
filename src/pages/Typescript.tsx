@@ -2,6 +2,10 @@ import React from "react";
 
 import { Repositories } from "../components";
 
-const TypescriptRepos = () => <Repositories term="TypeScript" />;
+import typescriptLogo from "../assets/typescript.svg";
+
+const TypescriptRepos = () => (
+  <Repositories term="TypeScript" techLogo={typescriptLogo} />
+);
 
 export default TypescriptRepos;

@@ -6,10 +6,15 @@ import Repositories from "./Repositories";
 import { lightTheme } from "../../styles/theme";
 
 test("renders a list of repositories", () => {
+  const defaultProps = {
+    term: "test",
+    techLogo: "../../assets/javascript.svg"
+  };
+
   const { container } = render(
     <MemoryRouter>
       <ThemeProvider theme={lightTheme}>
-        <Repositories />
+        <Repositories {...defaultProps} />
       </ThemeProvider>
     </MemoryRouter>
   );

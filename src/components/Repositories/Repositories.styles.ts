@@ -23,13 +23,16 @@ export const Filter = styled.div`
   margin: 0 5px;
 `;
 
-export const CategoryTitle = styled.h2`
-  position: relative;
-  background-color: ${props => props.theme.colors.primary};
-  color: ${props => props.theme.colors.text};
+export const CategoryLogo = styled.img`
+  background-image: ${({ src }) => src};
   width: 50px;
   height: 50px;
-  padding: 1em;
+`;
+
+export const CategoryTitle = styled.h2`
+  position: relative;
+  color: ${props => props.theme.colors.text};
+  padding: 1em 0.5em;
 `;
 
 export const RepoGrid = styled.ul`

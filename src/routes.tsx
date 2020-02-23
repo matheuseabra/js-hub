@@ -5,7 +5,8 @@ import {
   ReactRepos,
   VueRepos,
   NodeRepos,
-  TypescriptRepos
+  TypescriptRepos,
+  AngularRepos
 } from "./pages";
 import { NotFound } from "./components";
 
@@ -17,6 +18,7 @@ const Routes = () => {
       <Route exact path="/react" component={ReactRepos} />
       <Route exact path="/vue" component={VueRepos} />
       <Route exact path="/typescript" component={TypescriptRepos} />
+      <Route exact path="/angular" component={AngularRepos} />
       <Route component={NotFound} />
     </Switch>
   );

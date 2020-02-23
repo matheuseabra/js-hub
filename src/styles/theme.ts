@@ -1,7 +1,7 @@
 export const lightTheme = {
   title: "light",
   colors: {
-    primary: "yellow",
+    primary: "#f7df1e",
     secondary: "#111",
     body: "#FAFAFA",
     text: "#222",
@@ -13,7 +13,7 @@ export const darkTheme = {
   title: "dark",
   colors: {
     primary: "#111",
-    secondary: "yellow",
+    secondary: "#f7df1e",
     body: "#222",
     text: "#FAFAFA",
     spinnerColor: "#FFF"

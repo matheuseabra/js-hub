@@ -30,6 +30,9 @@ const Header: React.FC<HeaderProps> = ({ toggleTheme, setShowSearch }) => {
         <NavItem>
           <Link to="/typescript">TypeScript</Link>
         </NavItem>
+        <NavItem>
+          <Link to="/angular">Angular</Link>
+        </NavItem>
       </Nav>
       <Nav>
         <NavItem onClick={() => toggleTheme()}>

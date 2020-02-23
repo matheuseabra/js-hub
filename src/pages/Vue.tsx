@@ -2,6 +2,8 @@ import React from "react";
 
 import { Repositories } from "../components";
 
-const VueRepos = () => <Repositories term="Vue" />;
+import vueLogo from "../assets/vue.svg";
+
+const VueRepos = () => <Repositories term="Vue" techLogo={vueLogo} />;
 
 export default VueRepos;

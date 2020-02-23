@@ -8,14 +8,18 @@ import Loader from "../Loader/Loader";
 import {
   Container,
   CategoryTitle,
+  CategoryLogo,
   RepoGrid
 } from "../Repositories/Repositories.styles";
 
+import jsLogo from "../../assets/javascript.svg";
+
 type RepositoriesProps = {
   term?: string;
+  techLogo?: string;
 };
 
-const Repositories: React.FC<RepositoriesProps> = ({ term }) => {
+const Repositories: React.FC<RepositoriesProps> = ({ term, techLogo }) => {
   const [repositories, setRepositories] = useState<[RepositoryType]>();
   const [isLoading, setIsLoading] = useState(false);
 
@@ -67,6 +71,7 @@ const Repositories: React.FC<RepositoriesProps> = ({ term }) => {
       {!isLoading && repositories && (
         <Pane display="flex">
           <Pane flex={1} alignItems="center" display="flex">
+            <CategoryLogo src={techLogo} />
             <CategoryTitle>{term}</CategoryTitle>
           </Pane>
           <Pane>
@@ -105,7 +110,8 @@ const Repositories: React.FC<RepositoriesProps> = ({ term }) => {
 };
 
 Repositories.defaultProps = {
-  term: "JavaScript"
+  term: "JavaScript",
+  techLogo: jsLogo
 };
 
 export default Repositories;
