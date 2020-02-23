@@ -1,10 +1,7 @@
 # JS Stack
 
-<span>
-![Netlify Status](https://api.netlify.com/api/v1/badges/ea4d59e6-aa6e-433f-add1-5d6f25b9b640/deploy-status)
-
-![](https://github.com/matheuseabra/js-stack/workflows/install-build-test/badge.svg)
-</span>
+[![Netlify Status]][https://api.netlify.com/api/v1/badges/ea4d59e6-aa6e-433f-add1-5d6f25b9b640/deploy-status]
+[![Gihub Actions Status]][https://github.com/matheuseabra/js-stack/workflows/install-build-test/badge.svg?branch=master]
 
 ![the js-stack homepage](https://github.com/matheuseabra/js-stack/blob/master/.github/docs/homepage.png)
 
