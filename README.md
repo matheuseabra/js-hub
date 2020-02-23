@@ -6,7 +6,7 @@ A curated list of top open-source JavaScript libraries, frameworks and tools for
 
 ## Live Demo
 
-[https://matheuseabra.me/js-dev-tools](https://matheuseabra.me/js-dev-tools)
+[https://js-stack.netlify.com](https://js-stack.netlify.com)
 
 ### Prerequisites
 

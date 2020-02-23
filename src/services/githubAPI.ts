@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const githubAPI = axios.create({
-  baseURL: process.env.REACT_APP_GITHUB_API,
+  baseURL: "https://api.github.com",
   headers: { Accept: "application/vnd.github.mercy-preview+json" }
 });
 
