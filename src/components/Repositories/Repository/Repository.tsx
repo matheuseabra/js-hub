@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { Avatar, Icon } from "evergreen-ui";
 import {
   Container,
@@ -56,4 +56,4 @@ const Repository = (repo: RepositoryProps) => {
   );
 };
 
-export default Repository;
+export default memo(Repository);

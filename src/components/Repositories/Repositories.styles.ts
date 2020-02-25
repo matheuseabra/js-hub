@@ -39,6 +39,12 @@ export const Filter = styled.div`
   margin: 0 5px;
 `;
 
+export const CategoryContainer = styled.div`
+  display: flex;
+  align-items: center;
+  animation: 0.35s ease-in-out 0s fadeInUp;
+`;
+
 export const CategoryLogo = styled.img`
   background-image: ${({ src }) => src};
   width: 50px;
@@ -47,6 +53,7 @@ export const CategoryLogo = styled.img`
 
 export const CategoryTitle = styled.h2`
   position: relative;
+  bottom: 1.5px;
   color: ${props => props.theme.colors.text};
   padding: 1em 0.5em;
 `;
@@ -59,7 +66,7 @@ export const RepoGrid = styled.ul`
   padding: 0;
   margin: 0;
   list-style-type: none;
-  animation: 0.45s ease-in-out 0s fadeInUp;
+  animation: 0.35s ease-in-out 0s fadeInUp;
 
   @media only screen and (max-width: 468px) {
     grid-template-columns: 1fr;

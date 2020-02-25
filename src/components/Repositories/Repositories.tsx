@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import githubAPI from "../../services/githubAPI";
 import { RepositoryType } from "../../types/RepositoryType";
 import Repository from "./Repository/Repository";
@@ -7,6 +7,7 @@ import { Pane } from "evergreen-ui";
 import Loader from "../Loader/Loader";
 import {
   Container,
+  CategoryContainer,
   CategoryTitle,
   CategoryLogo,
   RepoGrid
@@ -22,10 +23,10 @@ type RepositoriesProps = {
 const Repositories: React.FC<RepositoriesProps> = ({ term, techLogo }) => {
   const [repositories, setRepositories] = useState<[RepositoryType]>();
   const [isLoading, setIsLoading] = useState(false);
-
   const [order, setOrder] = useState("desc");
   const [currentPage] = useState(1);
   const [limit, setLimit] = useState(36);
+  const isLoaded = !isLoading && repositories?.length;
 
   useEffect(() => {
     const fetchRepositories = async () => {
@@ -62,49 +63,53 @@ const Repositories: React.FC<RepositoriesProps> = ({ term, techLogo }) => {
     setOrder(prevState => (prevState === "desc" ? "asc" : "desc"));
   };
 
+  const repositoriesMap = useMemo(
+    () =>
+      isLoaded &&
+      repositories?.map(
+        ({
+          id,
+          name,
+          description,
+          avatar_url,
+          html_url,
+          stargazers_count,
+          forks_count,
+          open_issues_count
+        }) => (
+          <Repository
+            key={id}
+            name={name}
+            description={description}
+            avatar_url={avatar_url}
+            html_url={html_url}
+            stargazers_count={stargazers_count}
+            forks_count={forks_count}
+            open_issues_count={open_issues_count}
+          />
+        )
+      ),
+    [repositories, isLoaded]
+  );
+
   if (isLoading) {
     return <Loader />;
   }
 
   return (
     <Container>
-      {!isLoading && repositories && (
-        <Pane display="flex">
-          <Pane flex={1} alignItems="center" display="flex">
+      <Pane display="flex">
+        <Pane flex={1} alignItems="center" display="flex">
+          <CategoryContainer>
             <CategoryLogo src={techLogo} />
             <CategoryTitle>{term}</CategoryTitle>
-          </Pane>
-          <Pane>
-            <Filters order={order} handleOrderChange={handleOrderChange} />
-          </Pane>
+          </CategoryContainer>
         </Pane>
-      )}
-      <RepoGrid>
-        {!isLoading &&
-          repositories?.map(
-            ({
-              id,
-              name,
-              description,
-              avatar_url,
-              html_url,
-              stargazers_count,
-              forks_count,
-              open_issues_count
-            }) => (
-              <Repository
-                key={id}
-                name={name}
-                description={description}
-                avatar_url={avatar_url}
-                html_url={html_url}
-                stargazers_count={stargazers_count}
-                forks_count={forks_count}
-                open_issues_count={open_issues_count}
-              />
-            )
-          )}
-      </RepoGrid>
+        <Pane>
+          <Filters order={order} handleOrderChange={handleOrderChange} />
+        </Pane>
+      </Pane>
+      <RepoGrid>{repositoriesMap}</RepoGrid>
     </Container>
   );
 };
