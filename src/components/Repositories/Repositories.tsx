@@ -25,7 +25,7 @@ const Repositories: React.FC<RepositoriesProps> = ({ term, techLogo }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [order, setOrder] = useState("desc");
   const [currentPage] = useState(1);
-  const [limit, setLimit] = useState(36);
+  const [limit] = useState(36);
   const isLoaded = !isLoading && repositories?.length;
 
   useEffect(() => {
@@ -54,10 +54,6 @@ const Repositories: React.FC<RepositoriesProps> = ({ term, techLogo }) => {
     };
     fetchRepositories();
   }, [term, currentPage, order, limit]);
-
-  const handleLimitChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setLimit(e.currentTarget.valueAsNumber);
-  };
 
   const handleOrderChange = () => {
     setOrder(prevState => (prevState === "desc" ? "asc" : "desc"));
