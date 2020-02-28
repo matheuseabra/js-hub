@@ -5,10 +5,6 @@ import { MemoryRouter } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { lightTheme } from "./styles/theme";
 
-// interface MockedProviderProps {
-//   children: React.ReactNode;
-// }
-
 export const renderWithRouter = (ui: React.ReactNode) => {
   return render(
     <ThemeProvider theme={lightTheme}>
