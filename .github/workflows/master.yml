@@ -31,7 +31,7 @@ jobs:
         run: yarn build
 
       - name: Run tests
-        run: yarn test:ci --coverage
+        run: yarn test:ci
 
       - name: Run linters
         run: yarn lint

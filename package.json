@@ -1,5 +1,5 @@
 {
-  "name": "js-stack",
+  "name": "js-hub",
   "version": "0.1.0",
   "dependencies": {
     "axios": "^0.19.2",
@@ -17,7 +17,7 @@
     "build:production": "env-cmd -f .env.production yarn build",
     "lint": "npx eslint src --ext ts,tsx",
     "test": "react-scripts test",
-    "test:ci": "react-scripts test --watchAll=false",
+    "test:ci": "react-scripts test --coverage --watchAll=false",
     "eject": "react-scripts eject",
     "rm:build": "sudo rm -rf build"
   },
