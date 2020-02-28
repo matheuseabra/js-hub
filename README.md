@@ -2,13 +2,13 @@
 
 ![Netlify Status](https://api.netlify.com/api/v1/badges/ea4d59e6-aa6e-433f-add1-5d6f25b9b640/deploy-status)
 
-![the js-hub homepage](https://github.com/matheuseabra/js-stack/blob/master/.github/docs/homepage.png)
+![the js-hub homepage](https://github.com/matheuseabra/js-hub/blob/master/.github/docs/homepage.png)
 
 A curated list of top open-source JavaScript libraries, frameworks and tools for developers.
 
 ## Live Demo
 
-[https://js-stack.netlify.com](https://js-stack.netlify.com)
+[https://js-hub.netlify.com/](https://js-hub.netlify.com/)
 
 ### Prerequisites
 
@@ -22,8 +22,8 @@ A curated list of top open-source JavaScript libraries, frameworks and tools for
 These instructions will get you a copy of the project up and running on your local machine for development.
 
 ```
-$ git clone https://github.com/matheuseabra/js-stack
-$ cd js-stack
+$ git clone https://github.com/matheuseabra/js-hub
+$ cd js-hub
 $ docker-compose up
 ```
 
