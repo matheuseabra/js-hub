@@ -1,9 +1,6 @@
 import React from "react";
-import { render } from "@testing-library/react";
-import { MemoryRouter } from "react-router-dom";
-import { ThemeProvider } from "styled-components";
 import Repository from "./Repository";
-import { lightTheme } from "../../../styles/theme";
+import { renderWithRouter } from "../../../setupTests";
 
 test("renders a Repository", () => {
   const defaultProps = {
@@ -16,13 +13,11 @@ test("renders a Repository", () => {
     open_issues_count: 0
   };
 
-  const { getByText } = render(
-    <MemoryRouter>
-      <ThemeProvider theme={lightTheme}>
-        <Repository {...defaultProps} />
-      </ThemeProvider>
-    </MemoryRouter>
+  const { container, getByText } = renderWithRouter(
+    <Repository {...defaultProps} />
   );
+
+  expect(container).toBeInTheDocument();
 
   const name = getByText(/test repo/i);
   expect(name).toBeInTheDocument();

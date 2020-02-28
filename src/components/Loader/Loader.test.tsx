@@ -1,17 +1,8 @@
 import React from "react";
-import { render } from "@testing-library/react";
-import { MemoryRouter } from "react-router-dom";
-import { ThemeProvider } from "styled-components";
 import Loader from "./Loader";
-import { lightTheme } from "../../styles/theme";
+import { renderWithRouter } from "../../setupTests";
 
 test("renders a Loader properly", () => {
-  const { container } = render(
-    <MemoryRouter>
-      <ThemeProvider theme={lightTheme}>
-        <Loader />
-      </ThemeProvider>
-    </MemoryRouter>
-  );
+  const { container } = renderWithRouter(<Loader />);
   expect(container).toBeInTheDocument();
 });

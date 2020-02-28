@@ -1,20 +1,13 @@
 import React from "react";
-import { render } from "@testing-library/react";
-import { MemoryRouter } from "react-router-dom";
-import { ThemeProvider } from "styled-components";
 import Filters from "./Filters";
-import { lightTheme } from "../../styles/theme";
+import { renderWithRouter } from "../../setupTests";
 
 test("renders a filter properly", () => {
   const order = "asc";
   const handleOrderChange = () => {};
 
-  const { container } = render(
-    <MemoryRouter>
-      <ThemeProvider theme={lightTheme}>
-        <Filters order={order} handleOrderChange={handleOrderChange} />
-      </ThemeProvider>
-    </MemoryRouter>
+  const { container } = renderWithRouter(
+    <Filters order={order} handleOrderChange={handleOrderChange} />
   );
 
   expect(container).toBeInTheDocument();

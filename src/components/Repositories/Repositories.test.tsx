@@ -1,9 +1,6 @@
 import React from "react";
-import { render } from "@testing-library/react";
-import { MemoryRouter } from "react-router-dom";
-import { ThemeProvider } from "styled-components";
 import Repositories from "./Repositories";
-import { lightTheme } from "../../styles/theme";
+import { renderWithRouter } from "../../setupTests";
 
 test("renders a list of repositories", () => {
   const defaultProps = {
@@ -11,12 +8,6 @@ test("renders a list of repositories", () => {
     techLogo: "../../assets/javascript.svg"
   };
 
-  const { container } = render(
-    <MemoryRouter>
-      <ThemeProvider theme={lightTheme}>
-        <Repositories {...defaultProps} />
-      </ThemeProvider>
-    </MemoryRouter>
-  );
+  const { container } = renderWithRouter(<Repositories {...defaultProps} />);
   expect(container).toBeInTheDocument();
 });
