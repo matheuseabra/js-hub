@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { ThemeContext } from "styled-components";
+import { SidebarContext } from "../../context/SidebarContext";
 import { Icon } from "evergreen-ui";
 import {
   Container,
@@ -12,11 +13,13 @@ import {
 
 interface HeaderProps {
   toggleTheme: Function;
-  setShowSearch: Function;
 }
 
-const Header: React.FC<HeaderProps> = ({ toggleTheme, setShowSearch }) => {
+const Header: React.FC<HeaderProps> = ({ toggleTheme }) => {
   const { title, colors } = useContext(ThemeContext);
+  const { showSidebar, setShowSidebar } = useContext(SidebarContext);
+
+  console.log({ showSidebar, setShowSidebar });
 
   return (
     <Container>
@@ -48,7 +51,7 @@ const Header: React.FC<HeaderProps> = ({ toggleTheme, setShowSearch }) => {
             <Icon icon="moon" color={colors.text} />
           )}
         </NavItem>
-        <NavItem onClick={() => setShowSearch(true)}>
+        <NavItem onClick={() => setShowSidebar(!showSidebar)}>
           <Icon icon="search" color={colors.text} />
         </NavItem>
       </Nav>

@@ -15,6 +15,7 @@ export const GlobalStyles = createGlobalStyle`
 
   --white: #fff;
   --black: #111;
+  --grey: #777;
   --light-grey: #f7f7f7;
 
   --font: "Source Code Pro", monospace;
@@ -70,5 +71,16 @@ a {
     transition: all 0.15s cubic-bezier(0.25, 0.8, 0.25, 1);
     opacity: 1;
   }
+}
+
+
+.css-xeqldi::before, [data-css-xeqldi]::before, .css-xeqldi[data-simulate-before], [data-css-xeqldi][data-simulate-before] {
+  left: 0;
+  top: 0;
+  position: fixed;
+  display: block;
+  width: 100%;
+  height: 100%;
+  content: " ";
 }
 `;

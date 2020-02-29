@@ -1,15 +1,26 @@
-import React from "react";
-import { SideSheet, SearchInput, Pane } from "evergreen-ui";
+import React, { useContext } from "react";
+import { SideSheet, Position } from "evergreen-ui";
+import { ThemeContext } from "styled-components";
+import { SidebarContext } from "../../context/SidebarContext";
+
+import { SidebarContainer, SidebarTitle, SearchInput } from "./Sidebar.styles";
 
 const Sidebar = () => {
+  const { showSidebar, setShowSidebar } = useContext(SidebarContext);
+  const { colors } = useContext(ThemeContext);
+
   return (
-    <SideSheet>
-      <Pane zIndex={1} flexShrink={0} elevation={0} backgroundColor="white">
-        <Pane padding={16}>
-          <h2>Search</h2>
-          <SearchInput placeholder="Search for repositories" width="100%" />
-        </Pane>
-      </Pane>
+    <SideSheet
+      position={Position.TOP}
+      isShown={showSidebar}
+      onCloseComplete={() => setShowSidebar(false)}
+      containerProps={{ backgroundColor: colors.body }}
+      preventBodyScrolling={false}
+    >
+      <SidebarContainer>
+        <SidebarTitle>Search GitHub repositories</SidebarTitle>
+        <SearchInput type="text" placeholder="e.g: react auth libraries" />
+      </SidebarContainer>
     </SideSheet>
   );
 };
