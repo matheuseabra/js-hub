@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const SidebarContainer = styled.aside`
   display: flex;
+  flex-direction: column;
   flex-shrink: 0;
   align-items: center;
   z-index: 1;
@@ -16,7 +17,7 @@ export const SidebarTitle = styled.h2`
 
 export const SearchInput = styled.input`
   height: 40px;
-  max-width: 50%;
+  width: 70%;
   background-color: ${props => props.theme.colors.body};
   border: 2px solid ${props => props.theme.colors.text};
   color: ${props => props.theme.colors.text};

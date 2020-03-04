@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { SideSheet, Position } from "evergreen-ui";
+import { SideSheet } from "evergreen-ui";
 import { ThemeContext } from "styled-components";
 import { SidebarContext } from "../../context/SidebarContext";
 
@@ -11,7 +11,6 @@ const Sidebar = () => {
 
   return (
     <SideSheet
-      position={Position.TOP}
       isShown={showSidebar}
       onCloseComplete={() => setShowSidebar(false)}
       containerProps={{ backgroundColor: colors.body }}

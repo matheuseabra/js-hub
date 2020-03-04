@@ -16,5 +16,5 @@
     "jsx": "react"
   },
   "include": ["src"],
-  "files": ["src/styles/styled.d.ts", "src/components/Sidebar/index.d.ts"]
+  "files": ["src/styles/styled.d.ts"]
 }

@@ -2,6 +2,7 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 import {
   Home,
+  JavascriptRepos,
   ReactRepos,
   VueRepos,
   NodeRepos,
@@ -14,6 +15,7 @@ const Routes = () => {
   return (
     <Switch>
       <Route exact path="/" component={Home} />
+      <Route exact path="/javascript" component={JavascriptRepos} />
       <Route exact path="/node" component={NodeRepos} />
       <Route exact path="/react" component={ReactRepos} />
       <Route exact path="/vue" component={VueRepos} />

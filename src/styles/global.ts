@@ -72,15 +72,4 @@ a {
     opacity: 1;
   }
 }
-
-
-.css-xeqldi::before, [data-css-xeqldi]::before, .css-xeqldi[data-simulate-before], [data-css-xeqldi][data-simulate-before] {
-  left: 0;
-  top: 0;
-  position: fixed;
-  display: block;
-  width: 100%;
-  height: 100%;
-  content: " ";
-}
 `;
