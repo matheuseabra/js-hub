@@ -1,14 +1,14 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { ThemeContext } from "styled-components";
-import { SidebarContext } from "../../context/SidebarContext";
+// import { SidebarContext } from "../../context/SidebarContext";
 import { Icon } from "evergreen-ui";
 import {
   Container,
   Logotype,
   Menu,
   Nav,
-  NavItem
+  NavItem,
 } from "../Header/Header.styles";
 
 interface HeaderProps {
@@ -17,14 +17,14 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ toggleTheme }) => {
   const { title, colors } = useContext(ThemeContext);
-  const { showSidebar, setShowSidebar } = useContext(SidebarContext);
+  // const { showSidebar, setShowSidebar } = useContext(SidebarContext);
 
-  console.log({ showSidebar, setShowSidebar });
+  const logotype = "js.hub();";
 
   return (
     <Container>
       <Logotype>
-        <Link to="/">JS Hub</Link>
+        <Link to="/">{logotype}</Link>
       </Logotype>
       <Menu>
         <NavItem>
@@ -51,9 +51,9 @@ const Header: React.FC<HeaderProps> = ({ toggleTheme }) => {
             <Icon icon="moon" color={colors.text} />
           )}
         </NavItem>
-        <NavItem onClick={() => setShowSidebar(!showSidebar)}>
+        {/* <NavItem onClick={() => setShowSidebar(!showSidebar)}>
           <Icon icon="search" color={colors.text} />
-        </NavItem>
+        </NavItem> */}
       </Nav>
     </Container>
   );

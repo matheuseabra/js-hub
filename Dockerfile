@@ -13,7 +13,7 @@ COPY . .
 COPY yarn.lock /usr/src/app/
 COPY package.json /usr/src/app/
 
-RUN yarn install --production
+RUN yarn install
 RUN yarn build
 
 CMD ["yarn", "start"]

@@ -1,16 +1,14 @@
 import React, { useEffect, useState, useMemo } from "react";
 import githubAPI from "../../services/githubAPI";
 import { RepositoryType } from "../../types/RepositoryType";
-import Repository from "./Repository/Repository";
-import Filters from "../Filters/Filters";
 import { Pane } from "evergreen-ui";
-import Loader from "../Loader/Loader";
+import { Footer, Filters, Loader, Repository } from "../../components";
 import {
   Container,
   CategoryContainer,
   CategoryTitle,
   CategoryLogo,
-  RepoGrid
+  RepoGrid,
 } from "../Repositories/Repositories.styles";
 
 import jsLogo from "../../assets/javascript.svg";
@@ -29,7 +27,7 @@ const Repositories: React.FC<RepositoriesProps> = ({ term, techLogo }) => {
   const isLoaded = !isLoading && repositories?.length;
 
   useEffect(() => {
-    const fetchRepositories = async () => {
+    (async () => {
       setIsLoading(true);
       const response = await githubAPI.get(
         `/search/repositories?q=${term}+topic:${term}&page=${currentPage}&per_page=${limit}&sort=stars&order=${order}`
@@ -46,17 +44,16 @@ const Repositories: React.FC<RepositoriesProps> = ({ term, techLogo }) => {
             git_url: item.git_url,
             stargazers_count: item.stargazers_count,
             forks_count: item.forks_count,
-            open_issues_count: item.open_issues_count
+            open_issues_count: item.open_issues_count,
           }))
         );
         setIsLoading(false);
       }
-    };
-    fetchRepositories();
+    })();
   }, [term, currentPage, order, limit]);
 
   const handleOrderChange = () => {
-    setOrder(prevState => (prevState === "desc" ? "asc" : "desc"));
+    setOrder((prevState) => (prevState === "desc" ? "asc" : "desc"));
   };
 
   const repositoriesMap = useMemo(
@@ -71,7 +68,7 @@ const Repositories: React.FC<RepositoriesProps> = ({ term, techLogo }) => {
           html_url,
           stargazers_count,
           forks_count,
-          open_issues_count
+          open_issues_count,
         }) => (
           <Repository
             key={id}
@@ -93,26 +90,29 @@ const Repositories: React.FC<RepositoriesProps> = ({ term, techLogo }) => {
   }
 
   return (
-    <Container>
-      <Pane display="flex">
-        <Pane flex={1} alignItems="center" display="flex">
-          <CategoryContainer>
-            <CategoryLogo src={techLogo} />
-            <CategoryTitle>{term}</CategoryTitle>
-          </CategoryContainer>
+    <>
+      <Container>
+        <Pane display="flex">
+          <Pane flex={1} alignItems="center" display="flex">
+            <CategoryContainer>
+              <CategoryLogo src={techLogo} />
+              <CategoryTitle>{term}</CategoryTitle>
+            </CategoryContainer>
+          </Pane>
+          <Pane>
+            <Filters order={order} handleOrderChange={handleOrderChange} />
+          </Pane>
         </Pane>
-        <Pane>
-          <Filters order={order} handleOrderChange={handleOrderChange} />
-        </Pane>
-      </Pane>
-      <RepoGrid>{repositoriesMap}</RepoGrid>
-    </Container>
+        <RepoGrid>{repositoriesMap}</RepoGrid>
+      </Container>
+      <Footer />
+    </>
   );
 };
 
 Repositories.defaultProps = {
   term: "JavaScript",
-  techLogo: jsLogo
+  techLogo: jsLogo,
 };
 
 export default Repositories;

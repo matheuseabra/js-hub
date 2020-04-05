@@ -24,8 +24,8 @@ export const GlobalStyles = createGlobalStyle`
 }
 
 body { 
-  background: ${props => props.theme.colors.body};
-  color: ${props => props.theme.colors.text};
+  background: ${(props) => props.theme.colors.body};
+  color: ${(props) => props.theme.colors.text};
   padding: 0;
   margin: 0;
 
@@ -40,8 +40,14 @@ i {
 
 a {
   text-decoration: none;
-  color: inherit;
+  color: ${(props) => props.theme.colors.text};
+
+  &:hover {
+    text-decoration: none;
+  }
 }
+
+
 
 /* Keyframes */
 

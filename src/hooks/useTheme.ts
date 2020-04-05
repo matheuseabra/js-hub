@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { ThemeProvider, ThemeProviderComponent } from "styled-components";
+
 import { lightTheme, darkTheme } from "../styles/theme";
 
-type Response<T> = [T, ThemeProviderComponent<object>, Function];
+type Response<T> = [T, Function];
 
 function useTheme<T>(key: string, initialState: T): Response<T> {
   const [theme, setTheme] = useState(() => {
@@ -27,7 +27,7 @@ function useTheme<T>(key: string, initialState: T): Response<T> {
     }
   };
 
-  return [theme, ThemeProvider, toggleTheme];
+  return [theme, toggleTheme];
 }
 
 export default useTheme;
