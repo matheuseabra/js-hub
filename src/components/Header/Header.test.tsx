@@ -4,12 +4,12 @@ import { renderWithRouter } from "../../setupTests";
 
 test("renders a header properly", () => {
   const toggleThemeSpy = () => {};
-  const setShowSearchSpy = () => {};
+  const logotype = "js.hub();";
 
   const { getByText } = renderWithRouter(
-    <Header toggleTheme={toggleThemeSpy} setShowSearch={setShowSearchSpy} />
+    <Header toggleTheme={toggleThemeSpy} />
   );
 
-  const title = getByText(/JS Hub/i);
+  const title = getByText(logotype);
   expect(title).toBeInTheDocument();
 });
