@@ -2,7 +2,7 @@
   "name": "js-hub",
   "version": "0.1.0",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "env-cmd": "^10.1.0",
     "evergreen-ui": "^4.23.0",
     "react": "^16.12.0",
